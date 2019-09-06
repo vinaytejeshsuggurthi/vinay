@@ -1,0 +1,28 @@
+provider "aws" {
+ access_key = "AKIAQNRZTR4KI73BYXUQ"
+ secret_key = "YM2dSPA0M9/94ThnKuBqGNE03i1RtcAnGU14MT32"
+    region = "us-east-2"
+
+}
+resource "aws_instance" "example" {
+
+    ami = "ami-0520e698dd500b1d1"
+    instance_type = "t2.micro"
+    key_name = "vinaytejeshdevops"
+    security_groups = ["${aws_security_group.terrform-sg.name}"]
+
+}
+resource "aws_security_group" "terrform-sg" {
+
+  name = "terraform2"
+  description = "built from terraform"
+
+  ingress {
+    from_port = 3389
+    to_port = 3389
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+}
+
