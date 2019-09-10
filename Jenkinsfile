@@ -33,9 +33,14 @@ pipeline {
                 
         stage('terraform init') {
             steps {
-                sh 'sudo terraform init'            }
+            
+           script { 
+            dir ('vinay') { 
+ 
+                sh 'sudo terraform init'   }
         }
-        stage('terraform plan') {
+}
+ }       stage('terraform plan') {
             steps {
                 sh 'sudo terraform plan'
             }
