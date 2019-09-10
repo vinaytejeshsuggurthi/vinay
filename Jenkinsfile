@@ -20,7 +20,11 @@ pipeline {
             }
         }
 
+     stage('git path') {
+         steps {
 
+               sh 'cd vinay' }
+}
                 
         stage('terraform init') {
             steps {
