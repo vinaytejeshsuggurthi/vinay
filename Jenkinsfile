@@ -25,6 +25,11 @@ pipeline {
 
                sh 'cd vinay' }
 }
+  stage('git folder') {
+      steps {
+     
+              sh 'ls' }
+}
                 
         stage('terraform init') {
             steps {
