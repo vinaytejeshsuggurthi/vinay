@@ -49,8 +49,10 @@ pipeline {
 }
         stage('terraform apply') {
             steps {
+                  
              dir ('vinay') {
-                sh 'sudo terraform apply' }
+                sh 'sudo terraform apply -auto-approve'
+                       }
             }
         }
 
