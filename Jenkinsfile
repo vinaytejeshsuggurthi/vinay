@@ -23,12 +23,12 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh 'ls ./jenkins; sudo /home/ec2-user/terraform plan ./jenkins'
+                sh 'terraform plan'
             }
         }
-        stage('terraform ended') {
+        stage('terraform apply') {
             steps {
-                sh 'echo "Ended....!!"'
+                sh 'terraform apply'
             }
         }
 
