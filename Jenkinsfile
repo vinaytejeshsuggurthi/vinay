@@ -42,15 +42,19 @@ pipeline {
 }
         stage('terraform plan') {
             steps {
-                sh 'sudo terraform plan'
+                dir ('vinay') {
+                sh 'sudo terraform plan' 
             }
         }
+}
         stage('terraform apply') {
             steps {
-                sh 'sudo terraform apply'
+             dir ('vinay') {
+                sh 'sudo terraform apply' }
             }
         }
 
         
     }
 }
+
