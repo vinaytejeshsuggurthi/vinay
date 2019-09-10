@@ -24,9 +24,6 @@ resource "aws_instance" "web" {
   ami           = "ami-0520e698dd500b1d1 "
   instance_type = "t2.micro"
 
-  tags {
-    Name = "HelloWorld"
-  }
 }
 output "ip"{
 value= "${aws_instance.web.public_ip}"
